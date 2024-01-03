@@ -50,7 +50,7 @@ export default function HomeScreen({ setCurrentScreen, db}) {
 
       
       // Replace with your Node.js server URL
-      const serverUrl = 'http://192.168.0.13:3000/analyze-image'; 
+      const serverUrl = 'http://IP주소:3000/analyze-image'; 
   
       const response = await fetch(serverUrl, {
         method: 'POST',
@@ -145,7 +145,7 @@ export default function HomeScreen({ setCurrentScreen, db}) {
   
   async function generateEmbedding(text) {
     try {
-      const response = await axios.post('http://192.168.0.13:3000/generate-embeddings', { text });
+      const response = await axios.post('http://IP주소:3000/generate-embeddings', { text });
       return response.data;
     } catch (error) {
       console.error("Error in generateEmbedding:", error);

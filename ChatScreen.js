@@ -60,7 +60,7 @@ export default function ChatScreen({ setCurrentScreen, db}) {
 
         try {
             // Node 서버로 텍스트 분석 요청
-            const response = await axios.post('http://192.168.0.13:3000/analyze-chat', { text });
+            const response = await axios.post('http://IP주소:3000/analyze-chat', { text });
             const data = response.data;
 
             // 서버 응답이 JSON 문자열인 경우, 이를 객체로 파싱합니다.
@@ -86,11 +86,11 @@ export default function ChatScreen({ setCurrentScreen, db}) {
             try {
                 // node 서버로부터 임베딩 받기
                 // 각 요소에 대한 임베딩을 요청합니다.
-                // const whoEmbeddingResponse = await axios.post('http://192.168.0.13:3000/generate-embeddings', { text : who });
-                // const whereEmbeddingResponse = await axios.post('http://192.168.0.13:3000/generate-embeddings', { text : where });
-                // const whatEmbeddingResponse = await axios.post('http://192.168.0.13:3000/generate-embeddings', { text : what });
-                // const howEmbeddingResponse = await axios.post('http://192.168.0.13:3000/generate-embeddings', { text : how });
-                const totalEmbeddingResponse = await axios.post('http://192.168.0.13:3000/generate-embeddings', { text : totalText });
+                // const whoEmbeddingResponse = await axios.post('http://IP주소:3000/generate-embeddings', { text : who });
+                // const whereEmbeddingResponse = await axios.post('http://IP주소:3000/generate-embeddings', { text : where });
+                // const whatEmbeddingResponse = await axios.post('http://IP주소:3000/generate-embeddings', { text : what });
+                // const howEmbeddingResponse = await axios.post('http://IP주소:3000/generate-embeddings', { text : how });
+                const totalEmbeddingResponse = await axios.post('http://IP주소:3000/generate-embeddings', { text : totalText });
 
                 // 임베딩 결과를 객체로 구성합니다.
                 const embeddings = {
